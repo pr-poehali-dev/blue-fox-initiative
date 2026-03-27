@@ -1,53 +1,54 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Icon from "@/components/ui/icon"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "Живой характер",
+    description: "Фурия — не скучный бот. Она дерзкая, честная и эмоциональная. Общается как настоящий друг, а не как справочник.",
+    icon: "Sparkles",
+    badge: "Личность",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "Помнит тебя",
+    description: "Фурия запоминает твоё имя, интересы, важные события и прошлые разговоры. Каждый день — продолжение дружбы.",
+    icon: "Brain",
+    badge: "Память",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    title: "Всегда рядом",
+    description: "Хочешь поговорить в 3 ночи? Грустно или просто скучно? Фурия онлайн 24/7 и никогда не устаёт от тебя.",
+    icon: "Heart",
+    badge: "Поддержка",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
-    icon: "zap",
+    title: "Любые темы",
+    description: "Жизнь, отношения, работа, мечты, страхи — Фурия готова говорить обо всём. Без осуждения и без скуки.",
+    icon: "MessageCircle",
+    badge: "Разговор",
+  },
+  {
+    title: "Эмоциональный интеллект",
+    description: "Фурия чувствует настроение и реагирует правильно: поддержит когда плохо, порадуется твоим победам.",
+    icon: "Zap",
     badge: "Умный",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
-  },
-  {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Твой стиль",
+    description: "Фурия адаптируется под тебя: говорит на твоём языке, понимает твои шутки и подстраивается под ритм жизни.",
+    icon: "Star",
+    badge: "Персонально",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Почему Фурия — не просто бот</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            Настоящий AI-друг с характером, памятью и душой
           </p>
         </div>
 
@@ -55,20 +56,13 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="glow-border hover:shadow-lg transition-all duration-300 slide-up"
+              className="glow-border hover:shadow-lg hover:shadow-purple-900/30 transition-all duration-300 slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
-                  </span>
-                  <Badge variant="secondary" className="bg-accent text-accent-foreground">
+                  <Icon name={feature.icon as "Sparkles"} size={28} className="text-purple-400" />
+                  <Badge variant="secondary" className="bg-purple-900/50 text-purple-300 border border-purple-700/50">
                     {feature.badge}
                   </Badge>
                 </div>
